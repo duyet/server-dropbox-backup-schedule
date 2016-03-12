@@ -1,5 +1,7 @@
 SOURCE_FOLDER="/root/project/quick"
-UPLOAD_FOLDER="./upload"
+UPLOAD_FOLDER="./upload/src"
+
+REMOVE_IN_SOURCE="$UPLOAD_FOLDER/node_modules"
 
 ######################
 
@@ -18,7 +20,10 @@ print "============================="
 print ""
 print ">> Copy source ..."
 print "Copy $SOURCE_FOLDER to $UPLOAD_FOLDER..."
-cp "$SOURCE_FOLDER/*" "$UPLOAD_FOLDER/src" -R
+rm -rf $UPLOAD_FOLDER
+mkdir $UPLOAD_FOLDER
+cp $SOURCE_FOLDER/* $UPLOAD_FOLDER -R
+rm -rf $REMOVE_IN_SOURCE
 print "OK"
 
 print ""
