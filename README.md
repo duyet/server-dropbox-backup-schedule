@@ -1,4 +1,4 @@
-# auto-backup-to-dropbox
+# Server auto backup to Dropbox schedule
 Script for server, auto dump database and backup to Dropbox. Cronjob each every hour, day, week, month, ...
 
 # Install
