@@ -1,5 +1,5 @@
 SOURCE_FOLDER="/root/project/quick"
-UPLOAD_FOLDER="./upload/src"
+UPLOAD_FOLDER="./upload"
 
 REMOVE_IN_SOURCE="$UPLOAD_FOLDER/node_modules"
 
@@ -19,11 +19,12 @@ print "============================="
 
 print ""
 print ">> Copy source ..."
-print "Copy $SOURCE_FOLDER to $UPLOAD_FOLDER..."
+print "Compress $SOURCE_FOLDER..."
 rm -rf $UPLOAD_FOLDER
 mkdir $UPLOAD_FOLDER
-cp $SOURCE_FOLDER/* $UPLOAD_FOLDER -R
-rm -rf $REMOVE_IN_SOURCE
+
+tar --exclude-vcs --exclude="$SOURCE_FOLDER/node_modules" --exclude="$SOURCE_FOLDER/public/lib" -zcvf $UPLOAD_FOLDER/backup-src.tar.gz $SOURCE_FOLDER
+
 print "OK"
 
 print ""
