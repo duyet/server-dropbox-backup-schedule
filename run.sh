@@ -1,4 +1,4 @@
-SOURCE_FOLDER="/root/project/quick"
+SOURCE_FOLDER="/home/ubuntu/project/quick"
 UPLOAD_FOLDER="./upload"
 
 REMOVE_IN_SOURCE="$UPLOAD_FOLDER/node_modules"
