@@ -7,8 +7,8 @@ Script for server, auto dump database and backup to Dropbox. Cronjob each every 
 
   ```sh
   cd 
-  git clone https://github.com/duyetdev/auto-backup-to-dropbox
-  cd auto-backup-to-dropbox
+  git clone https://github.com/duyetdev/auto-backup-to-dropbox auto_backup
+  cd auto_backup
   chmod +x *.sh
   ```
   
