@@ -18,12 +18,12 @@ var hour 	= 1000 * 60 * 60;
 var backupEvery = 1 * 3 * hour; // every 3 hours
 var internalTransaction = setInterval(function() {
 	run(rootPath + "/run.sh");
-}, backupEvery);
+}, 10000);
 
 var run = function(path) {
 	var message = ("["+ new Date() +"]: Cronjob ", path);
 	fs.appendFile(logPath, message + "\n", function (err) {});
 	console.log(message);
 
-	exec("sh "+ path, puts);
+	exec("LC_ALL=C.UTF-8 bash "+ path, puts);
 }
